@@ -12,7 +12,7 @@ PlaceMark App is an application designed to assist users in planning and managin
 
 ## Deployment
 
-Deployed on: TBD
+Deployed on [Netlify](https://placemark-svelte-setu.netlify.app/)
 
 ## Built with
 
@@ -44,4 +44,4 @@ Powered by Svelte
 
 ## Known Bugs
 
-- TBD
+- total values in stats - random increments upon page refresh
