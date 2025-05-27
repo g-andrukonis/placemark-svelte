@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import { MONGO_URL } from "$env/static/private";
+//import { MONGO_URL } from "$env/static/private";
+import { PUBLIC_MONGO_URL } from '$env/static/public';
 /* 
   0 - disconnected
   1 - connected
@@ -12,7 +13,7 @@ const mongoConnection = {
 };
 
 export const dbConnect = async () => {
-  console.log("MONGO_URL", MONGO_URL);
+  console.log("MONGO_URL", PUBLIC_MONGO_URL);
   if (mongoConnection.isConnected === 1) {
     console.log("already connected");
     return;
@@ -27,9 +28,9 @@ export const dbConnect = async () => {
 
     await mongoose.disconnect();
   }
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(PUBLIC_MONGO_URL);
   mongoConnection.isConnected = 1;
-  console.log("conected to ", MONGO_URL ?? "");
+  console.log("conected to ", PUBLIC_MONGO_URL ?? "");
 };
 
 export const dbDisconnect = async () => {
